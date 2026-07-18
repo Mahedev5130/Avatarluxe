@@ -1,0 +1,70 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+:root{
+  background-color: black;
+  color: white;
+}
+
+@theme inline {
+  --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
+ 
+  @keyframes scroll {
+    to {
+      transform: translate(calc(-50% - 0.5rem));
+    }
+  }
+
+  @keyframes ticker {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  @keyframes icon-soft {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  @keyframes icon-ring {
+    0% { transform: scale(1); opacity: 0.55; }
+    100% { transform: scale(1.55); opacity: 0; }
+  }
+}
+
+.effect-hover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: white;
+  transform: translateY(100%);
+  transition: transform 0.4s ease-in-out;
+  z-index: 0;
+}
+
+.effect-hover:hover::before {
+  transform: translateY(0%);
+}
+
+.effect-hover > * {
+  position: relative;
+  z-index: 10;
+}
+
+/* Hair treatments SEO page — scroll reveal (matches avatarluxe-hair-treatments SEO.html) */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease;
+}
+.fade-in.visible {
+  opacity: 1;
+}
+

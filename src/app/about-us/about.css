@@ -1,0 +1,27 @@
+.about-image-frame::before {
+  content: "";
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  right: -14px;
+  bottom: -14px;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  z-index: -1;
+}
+
+.vision-panel {
+  background: #000;
+}
+
+.review-texture {
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .about-image-frame::before {
+    top: 8px;
+    left: 8px;
+    right: -8px;
+    bottom: -8px;
+  }
+}
