@@ -271,18 +271,14 @@ export default function HairTreatmentsSeoPage() {
               className="relative mx-auto w-full max-w-sm lg:max-w-none"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded border border-[#D4AF37]/15 bg-zinc-900">
-                <div className="flex h-full flex-col items-center justify-center gap-3 bg-gradient-to-br from-zinc-900 via-zinc-800 to-zinc-950">
-                  <span className="text-5xl opacity-10">💇</span>
-                  <span className="text-[11px] uppercase tracking-[0.2em] text-zinc-600">
-                    Before &amp; After Photography
-                  </span>
-                </div>
-                <span className="absolute bottom-4 left-4 rounded bg-black/55 px-3 py-1 text-[10px] uppercase tracking-[0.18em]">
-                  Before
-                </span>
-                <span className="absolute bottom-4 right-4 rounded bg-black/55 px-3 py-1 text-[10px] uppercase tracking-[0.18em]">
-                  After
-                </span>
+                <BeforeAfterSlider
+                  fill
+                  priority
+                  beforeSrc="/images/hair-treatment/hair-before.webp"
+                  afterSrc="/images/hair-treatment/hair-after.webp"
+                  beforeAlt="Hair transplant before result"
+                  afterAlt="Hair transplant after result"
+                />
               </div>
               <div className="absolute -bottom-4 -left-4 min-w-[140px] rounded bg-[#D4AF37] px-5 py-4 text-black">
                 <span className="block text-3xl font-light leading-none">
@@ -376,7 +372,12 @@ export default function HairTreatmentsSeoPage() {
                 </div>
               </FadeUp>
               <FadeIn>
-                <BeforeAfterSlider />
+                <BeforeAfterSlider
+                  beforeSrc="/images/home/case-studies/arun-before.webp"
+                  afterSrc="/images/home/case-studies/arun-after.webp"
+                  beforeAlt="Arun Roberts before hair transplant"
+                  afterAlt="Arun Roberts after hair transplant"
+                />
               </FadeIn>
             </div>
           </div>
@@ -862,17 +863,17 @@ export default function HairTreatmentsSeoPage() {
       </main>
 
       {/* Sticky mobile CTA */}
-      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-center gap-3 bg-[#D4AF37] px-4 py-3 sm:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-40 flex items-center justify-between gap-3 bg-[#D4AF37] px-4 py-3 sm:hidden">
         <button
           type="button"
-          onClick={() => scrollTo("cta")}
-          className="fixed bottom-0 left-0 right-0 z-40 flex flex-col items-center gap-1 bg-[#D4AF37] px-6 py-3.5 sm:hidden"
+          onClick={() => setShowAppointment(true)}
+          className="min-w-0 flex-1 text-left"
         >
-          <span className="text-[13px] font-semibold tracking-wider text-black">
+          <span className="block text-[13px] font-semibold tracking-wider text-black">
             Book Free Hair Consultation
           </span>
         </button>
-        <div className="flex shrink-0 items-center justify-center gap-2.5">
+        <div className="flex shrink-0 items-center gap-2.5">
           <a
             href="tel:+919884469279"
             aria-label="Call us"

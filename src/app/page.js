@@ -133,7 +133,7 @@ export default function Home() {
     {
       id: 4,
       name: 'Plastic Surgery',
-      image: '/images/services/0002_Plastic_surgery_website.jpg',
+      image: '/images/services/0002_Plastic_surgery_website.webp',
     },
   ];
 

@@ -51,10 +51,10 @@ const teamMembers = [
       "/images/dr-ashrith-iyanahally.webp",
   },
   {
-    name: "Dr. Chaitra Shankar",
+    name: "Dr. Ankitha",
     role: "MBBS, MD DVL",
     image:
-      "/images/dr-chaithra-shankar.webp",
+      "/images/dr-ankitha.webp",
   },
 ];
 
