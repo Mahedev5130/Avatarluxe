@@ -106,8 +106,22 @@ export const REVIEWS = [
 ];
 
 export const DOCTORS = [
-  { id: "hair-transplant-surgeon", initial: "A", name: "Dr. Ashrith Iyannahally", cred: "MBBS · MS · MCH - Plastic Surgery · Hair Transplant Surgeon  · 15+ Years · Bangalore", bio: "Super Senior Hair Transplant Surgeon at Avatar Luxe, Koramangala, with experience performing 6,000+ successful hair transplant procedures. An expert in Sapphire Blade Hair Transplant, Nido Hair Implant, and Biofibre Synthetic Hair Implant techniques." },
-  { id: "dermatology-trichologist", initial: "B", name: "Dr. Ankitha", cred: "MBBS · MD (Dermatology) · Head of Skin & Hair Restoration · Bangalore", bio: "A leading specialist in Non-Surgical Hair Restoration, with expertise in GFC, PRP, Stem Cell Hair Therapy, and Hair Fall Management. Has successfully treated 3,000+ patients across Bengaluru." },
+  {
+    id: "hair-transplant-surgeon",
+    initial: "A",
+    name: "Dr. Ashrith Iyannahally",
+    image: "/images/hair-treatment/dr-ashrith.webp",
+    cred: "MBBS · MS · MCH - Plastic Surgery · Hair Transplant Surgeon  · 15+ Years · Bangalore",
+    bio: "Super Senior Hair Transplant Surgeon at Avatar Luxe, Koramangala, with experience performing 6,000+ successful hair transplant procedures. An expert in Sapphire Blade Hair Transplant, Nido Hair Implant, and Biofibre Synthetic Hair Implant techniques.",
+  },
+  {
+    id: "dermatology-trichologist",
+    initial: "B",
+    name: "Dr. Ankitha",
+    image: "/images/hair-treatment/dr-ankitha.webp",
+    cred: "MBBS · MD (Dermatology) · Head of Skin & Hair Restoration · Bangalore",
+    bio: "A leading specialist in Non-Surgical Hair Restoration, with expertise in GFC, PRP, Stem Cell Hair Therapy, and Hair Fall Management. Has successfully treated 3,000+ patients across Bengaluru.",
+  },
 ];
 
 export const FAQS = [

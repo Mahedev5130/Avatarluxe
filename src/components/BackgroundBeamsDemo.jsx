@@ -1,8 +1,10 @@
 "use client";
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { BackgroundBeams } from "../components/ui/background-beams";
 
 export function BackgroundBeamsDemo() {
+  const router = useRouter();
   const [form, setForm] = useState({
     name: "",
     phone: "",
@@ -26,11 +28,11 @@ export function BackgroundBeamsDemo() {
       const data = await res.json();
 
       if (data.success) {
-        alert("Message sent successfully!");
         setForm({
           name: "",
           phone: "",
         });
+        router.push("/thank-you");
       } else {
         alert("Error sending message");
       }

@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { MapPin, Plus } from "lucide-react";
@@ -10,6 +11,7 @@ import Footer from "@/components/footer";
 import { Button } from "@/components/ui/button";
 import PopupForm from "@/components/PopupForm";
 import { BeforeAfterSlider } from "./BeforeAfterSlider";
+import { HeroImageSwiper } from "./HeroImageSwiper";
 import { FadeUp, FadeIn } from "./ScrollReveal";
 import {
   TICKER_ITEMS,
@@ -248,10 +250,10 @@ export default function HairTreatmentsSeoPage() {
                   </div>
                   <div>
                     <span className="block text-3xl font-light text-white">
-                      98%
+                      15+
                     </span>
                     <span className="mt-1 block text-[11px] uppercase tracking-[0.08em] text-zinc-600">
-                      Success Rate
+                      Years of Experience
                     </span>
                   </div>
                   <div>
@@ -271,33 +273,41 @@ export default function HairTreatmentsSeoPage() {
               className="relative mx-auto w-full max-w-sm lg:max-w-none"
             >
               <div className="relative aspect-[3/4] overflow-hidden rounded border border-[#D4AF37]/15 bg-zinc-900">
-                <BeforeAfterSlider
-                  fill
-                  priority
-                  beforeSrc="/images/hair-treatment/hair-before.webp"
-                  afterSrc="/images/hair-treatment/hair-after.webp"
-                  beforeAlt="Hair transplant before result"
-                  afterAlt="Hair transplant after result"
-                />
-              </div>
-              <div className="absolute -bottom-4 -left-4 min-w-[140px] rounded bg-[#D4AF37] px-5 py-4 text-black">
-                <span className="block text-3xl font-light leading-none">
-                  15
-                </span>
-                <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] opacity-80">
-                  Global Awards
-                </span>
-              </div>
-              <div className="absolute top-5 -right-3 rounded border border-[#D4AF37]/30 bg-zinc-900 px-3.5 py-3">
-                <span className="block text-[9px] uppercase tracking-[0.14em] text-[#D4AF37]">
-                  Certified
-                </span>
-                <span className="mt-1 block text-xs font-medium">
-                  Level-2 Hospital
-                </span>
-                <span className="text-[10px] text-zinc-600">
-                  KPME · Karnataka
-                </span>
+                <div className="absolute inset-0">
+                  <HeroImageSwiper priority />
+                </div>
+                {/* <div className="pointer-events-none absolute bottom-0 left-0 z-20 min-w-[140px] rounded bg-[#D4AF37] px-5 py-4 text-black">
+                  <span className="block text-3xl font-light leading-none">
+                    15
+                  </span>
+                  <span className="mt-1 block text-[10px] uppercase tracking-[0.12em] opacity-80">
+                    Global Awards
+                  </span>
+                </div> */}
+
+                {/* <div className="pointer-events-none absolute top-0 right-0 z-20 rounded border border-[#D4AF37]/30 bg-zinc-900/95 px-3.5 py-3 backdrop-blur-sm">
+                  <span className="block text-[9px] uppercase tracking-[0.14em] text-[#D4AF37]">
+                    Certified
+                  </span>
+                  <span className="mt-1 block text-xs font-medium">
+                    Level-2 Hospital
+                  </span>
+                  <span className="text-[10px] text-zinc-600">
+                    KPME · Karnataka
+                  </span>
+                </div> */}
+
+                <div className="pointer-events-none absolute bottom-0 left-0 z-20 rounded border border-[#D4AF37]/30 bg-zinc-900/95 px-2.5 py-2 sm:px-3.5 sm:py-3 backdrop-blur-sm">
+                  <span className="block text-[9px] uppercase tracking-[0.14em] text-[#D4AF37]">
+                    Certified
+                  </span>
+                  <span className="mt-1 block text-xs font-medium">
+                    Level-2 Hospital
+                  </span>
+                  <span className="text-[10px] text-zinc-600">
+                    KPME · Karnataka
+                  </span>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -689,8 +699,20 @@ export default function HairTreatmentsSeoPage() {
               {DOCTORS.map((doc, i) => (
                 <FadeUp key={doc.id} delay={100 + i * 100}>
                   <div className="flex gap-6 rounded border border-[#D4AF37]/15 bg-zinc-900 p-7">
-                    <div className="flex size-[72px] shrink-0 items-center justify-center rounded-full border border-[#D4AF37]/30 bg-zinc-800 text-2xl text-[#D4AF37]">
-                      {doc.initial}
+                    <div className="relative size-[72px] shrink-0 overflow-hidden rounded-full border border-[#D4AF37]/30 bg-zinc-800">
+                      {doc.image ? (
+                        <Image
+                          src={doc.image}
+                          alt={doc.name}
+                          fill
+                          sizes="72px"
+                          className="object-cover"
+                        />
+                      ) : (
+                        <span className="flex size-full items-center justify-center text-2xl text-[#D4AF37]">
+                          {doc.initial}
+                        </span>
+                      )}
                     </div>
                     <div>
                       <h3 className="mb-1 text-xl font-normal">{doc.name}</h3>
