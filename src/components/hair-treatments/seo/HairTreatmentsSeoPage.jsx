@@ -2,7 +2,6 @@
 
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import { MapPin, Plus } from "lucide-react";
 import { FaPhoneAlt, FaWhatsapp } from "react-icons/fa";
@@ -457,7 +456,9 @@ export default function HairTreatmentsSeoPage() {
                       <button
                         type="button"
                         onClick={() =>
-                          scrollTo(tx.link?.replace("#", "") || "cta")
+                          tx.link === "#cost"
+                            ? scrollTo("cost")
+                            : setShowAppointment(true)
                         }
                         className="mt-5 inline-flex items-center gap-1.5 text-[11px] uppercase tracking-wider text-[#D4AF37]"
                       >
@@ -477,7 +478,7 @@ export default function HairTreatmentsSeoPage() {
                       )}
                       <Button
                         className="rounded-sm bg-[#D4AF37] text-[11px] font-semibold uppercase text-black"
-                        onClick={() => scrollTo("cta")}
+                        onClick={() => setShowAppointment(true)}
                       >
                         {activePanel.cta.button}
                       </Button>
@@ -550,7 +551,7 @@ export default function HairTreatmentsSeoPage() {
                 <div className="mt-7 flex flex-wrap gap-3">
                   <Button
                     className="rounded-sm bg-[#D4AF37] text-xs font-semibold uppercase text-black"
-                    onClick={() => scrollTo("cta")}
+                    onClick={() => setShowAppointment(true)}
                   >
                     Get Your Free Cost Estimate
                   </Button>
@@ -863,11 +864,12 @@ export default function HairTreatmentsSeoPage() {
                 assessment and transparent pricing.
               </p>
               <div className="mb-8 flex flex-wrap justify-center gap-3.5">
-                <Link href="/contact-us">
-                  <Button className="rounded-sm bg-[#D4AF37] px-8 py-6 text-xs font-semibold uppercase text-black">
-                    Book Free Consultation
-                  </Button>
-                </Link>
+                <Button
+                  className="rounded-sm bg-[#D4AF37] px-8 py-6 text-xs font-semibold uppercase text-black"
+                  onClick={() => setShowAppointment(true)}
+                >
+                  Book Free Consultation
+                </Button>
                 <a
                   href="tel:+919884469279"
                   className="inline-flex items-center rounded-sm border border-[#8B6B3D] px-7 py-3 text-xs uppercase tracking-wider text-[#D4AF37]"
